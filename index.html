@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Final Simulación</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="asset/css/styles.css" />
+  </head>
+  <body>
+    <h1 class="h1-title">
+      Simulación de tráfico vehicular y organización de vía
+    </h1>
+    <div class="container" style="margin-bottom: 40px">
+      <div class="container-input-1">
+        <div>
+          <h4 class="h4-css">
+            Introduzca la fecha y hora de inicio (Formato 24h)
+          </h4>
+          <input class="input-date-css" type="date" id="fechaInicio" />
+          <input
+            class="input-hour-css"
+            type="number"
+            min="0"
+            max="23"
+            id="inicioHora"
+            placeholder="00"
+          />
+          <input
+            class="input-hour-css"
+            type="number"
+            min="0"
+            max="59"
+            id="inicioMins"
+            placeholder="00"
+          />
+        </div>
+        <div>
+          <h4 class="h4-css">
+            Introduzca la fecha y hora de fin (Formato 24h)
+          </h4>
+          <input class="input-date-css" type="date" id="fechaFin" />
+          <input
+            class="input-hour-css"
+            type="number"
+            min="0"
+            max="23"
+            id="finHora"
+            placeholder="00"
+          />
+          <input
+            class="input-hour-css"
+            type="number"
+            min="0"
+            max="59"
+            id="finMins"
+            placeholder="00"
+          />
+        </div>
+      </div>
+
+      <br />
+
+      <button
+        class="button-styles border border-light"
+        onclick="iniciarSimulacion();"
+      >
+        <b>Iniciar Simulación</b>
+      </button>
+    </div>
+
+    <div class="container">
+      <div class="container-simulation">
+        <div>
+          <h2 class="text-center" style="margin-bottom: 15px">
+            Reloj de Simulación
+          </h2>
+          <h3 class="text-center" id="reloj" style="margin-bottom: 20px"></h3>
+        </div>
+
+        <div style="display: flex" class="text-center">
+          <h3 id="direccionAuxiliar"></h3>
+
+          <div style="margin-left: 1cm">
+            <h3>Via Norte-Sur</h3>
+            <h4 id="picoNS"></h4>
+            <ul id="via1"></ul>
+          </div>
+
+          <div style="margin-left: 1cm">
+            <h3>Via Sur-Norte</h3>
+            <h4 id="picoSN"></h4>
+            <ul id="via2"></ul>
+          </div>
+        </div>
+
+        <div id="reportesFinales">
+          <h2 class="text-center" style="margin: 20px 0">
+            Reportes finales de la simulación
+          </h2>
+          <br />
+
+          <div class="Reportes">
+            <h3>Reporte de Via Auxiliar:</h3>
+            <div id="reporteAuxiliar"></div>
+            <br />
+
+            <h3>Reporte de Embotellamientos:</h3>
+            <div id="reporteEmbotellamiento"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./generadorSimulacion.js"></script>
+  </body>
+</html>
